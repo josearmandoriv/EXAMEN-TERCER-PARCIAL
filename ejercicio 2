@@ -1,0 +1,117 @@
+#include <stdio.h>
+// Examen Tercer parcial 
+//Rivera trejo José Armando
+// Primer semestre grupo: 3
+
+int main()
+{
+
+int matriz[5][12];
+int horizontal[12];
+int vertical[12];
+int fila,columna;
+int suma=0;
+int i,j;
+int PRE[4];
+int contador=0, sumatoria=0;
+int mon1,mon2,mon3,mon4,mon5;
+int pro1,pro2,pro3,pro4,pro5;
+int mayor, menor;
+
+/*introducir el numero de productos por mes y mostrarlos en una tabla*/
+for(fila=0;fila<5;fila++)
+{
+    for(columna=0;columna<12;columna++)
+    {
+        printf("Introduce un numero para la posicion %d,%d: ",fila,columna);
+        scanf("%d",&matriz[fila][columna]);
+    }
+}
+printf("\n\n\t\tMatriz original");
+     printf("\n\n");
+     for(i = 0;i < columna;i++){
+      printf("\n\t\t");
+      for(j = 0;j < fila;j++){
+          printf("  %6d  ", matriz[j][i]);
+          }
+  }
+  printf("\n");
+/*suma de las  filas */
+for(fila=0;fila<5;fila++)
+{
+    suma=0;
+    for(columna=0;columna<12;columna++)
+    {
+        suma+=matriz[fila][columna];
+    }
+    vertical[fila]=suma;
+}
+
+/*resultados*/
+for(i=0;i<5;i++)
+{
+    printf("el total de productos vendidos por mes son: %d\n",vertical[i]);
+}
+printf("\n\n");
+
+/*introducir el precio*/
+for(contador=0;contador<5;contador++){
+		printf("Introduce el precio: ");
+		scanf("%d", &PRE[contador]); 		
+	}
+	printf("\n");
+			
+	//sumatoria 
+	for(contador=0;contador<5;contador++){	
+		sumatoria = sumatoria + PRE[contador]; 
+	}
+	
+	//mostrar los datos ingresados 
+	printf("Los precios introducidos fueron: \n");	
+	for(contador=0;contador<5;contador++){
+		printf("%d",PRE[contador]);		
+		printf("\n");
+	}	
+	printf("\n");
+	printf("\n");
+	
+	//a)monto de ventas 
+	mon1=vertical[0]*PRE[0];
+	printf("el monto del producto 1 es: %d \n",mon1);
+	mon2=vertical[1]*PRE[1];
+	printf("el monto del producto 2 es: %d \n",mon2);
+	mon3=vertical[2]*PRE[2];
+	printf("el monto del producto 1 es: %d \n",mon3);
+	mon4=vertical[3]*PRE[3];
+	printf("el monto del producto 1 es: %d \n",mon4);
+	mon5=vertical[4]*PRE[4];
+	printf("el monto del producto 1 es: %d \n",mon5);
+	printf("\n");
+	
+	//promedio
+	pro1=mon1/12;
+	printf("el promedio de ventas anual del producto 1 es: %d \n",pro1);
+	pro2=mon2/12;
+	printf("el promedio de ventas anual del producto 2 es: %d \n",pro2);
+	pro3=mon3/12;
+	printf("el promedio de ventas anual del producto 3 es: %d \n",pro3);
+	pro4=mon4/12;
+	printf("el promedio de ventas anual del producto 4 es: %d \n",pro4);
+	pro5=mon5/12;
+	printf("el promedio de ventas anual del producto 5 es: %d \n",pro5);
+	
+	// cual es el menos vendido
+    
+    printf("\n");
+	 for (int i = 1; i < sizeof(vertical) / sizeof(vertical[0]); ++i)
+	{
+		if (vertical[i] > mayor) mayor = vertical[i];
+		if (vertical[i] < menor) menor = vertical[i];
+	}
+	printf("El mas vendido es: %d y el menor es %d\n", mayor, menor);
+	
+
+return 0;
+
+}
+
