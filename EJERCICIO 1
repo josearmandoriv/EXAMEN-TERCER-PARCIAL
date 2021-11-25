@@ -1,0 +1,46 @@
+#include <stdio.h>
+#define MAX 50
+// Examen Tercer parcial 
+//Rivera trejo José Armando
+// Primer semestre grupo: 3
+
+int main(int argc, char** args)
+{
+int matriz[MAX][MAX], N, M, i=0, j=0;
+  printf("Cuantas filas ocuparas: ");
+  scanf("%d", &N);
+  printf("Cuantas columnas ocuparas: ");
+  scanf("%d", &M);
+  
+  if (1<M<50 && 1<N<50)
+  {
+  for(i = 0;i < M;i++)
+  {
+      for(j = 0;j < N;j++){
+          printf("Escribe los valores de la posicion [%d][%d]: \t", i+1, j+1);
+              scanf("%d", &matriz[i][j]);
+      }
+  }
+  printf("\n\n\t\tMatriz original");
+  printf("\n\n");
+  for(i = 0;i < M;i++){
+      printf("\n\t\t");
+      for(j = 0;j < N;j++){
+          printf("  %6d  ", matriz[i][j]);
+          }
+  }
+  printf("\n\n\t\tMatriz transpuesta");
+  printf("\n\n");
+  for(i = 0;i < N;i++){
+      printf("\n\t\t");
+      for(j = 0;j < M;j++){
+          printf("  %6d  ", matriz[j][i]);
+          }
+  }
+  printf("\n\n\n");
+}
+else 
+{
+printf("excediste el limite de datos (las columnas y filas no pueden exeder  mas de 50 datos) ");
+}
+    }
